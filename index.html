@@ -1,146 +1,141 @@
-
-<style>
+<style type="text/css">
+    
     * {
-        margin: 0;
-        padding: 0
-    }
+    box-sizing: border-box;
+}
+ 
+/* body 样式 */
+body {
+    font-family: Arial;
+    margin: 0;
+}
+ 
+/* 标题 */
+.header {
+    padding: 80px;
+    text-align: center;
+    background:url(https://images.cnblogs.com/cnblogs_com/blogs/690905/galleries/2128405/o_220320050614_%E5%A4%A7%E6%B5%B7.jpg);
+    background-size:cover;
+    color: white;
+}
+ 
+/* 标题字体加大 */
+.header h1 {
+    font-size: 40px;
+}
+ 
+/* 导航 */
+.navbar {
+    overflow: hidden;
+    background-color: white;
+}
+ 
+/* 导航栏样式 */
+.navbar a {
+    border-radius:30px;
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
 
-    .home {
-        height: 100%;
-        overflow: hidden;
-    }
-
-    .content {
-        perspective: 150px;
-        width: 100%;
-        position: relative;
-    }
-/*网页标题*/
-    h1 {
-        color: white;
-        text-align: center;
-    }
-
-    span {
-        display: block;
-        text-align: center;
-    }
-
-
-    .title {
-        position: absolute;
-        display: flex;
-        justify-content: left;
-        left: 100px;
-        right: 0;
-        top: 340px;
-        margin: auto;
-        bottom: 0;
-        color: #fff;
-        font-size: 24px;
-        font-weight: 500;
-    }
-
-    .titles {
-        position: absolute;
-        display: flex;
-        justify-content: left;
-        left: 1000px;
-        right: 0;
-        top: 340px;
-        margin: auto;
-        bottom: 0;
-        color: #fff;
-        font-size: 20px;
-        font-weight: 500;
-    }
-/*点击链接,网页搜索获得，主页的超链接点击*/
-    .ribbon {
-        display: flex;
-        justify-content: center;
-        position: absolute;
-        right: 90px;
-        top: 15px;
-        margin: auto;
-    }
-
-    .ribbon:after,
-    .ribbon:before {
-        margin-top: 0.5em;
-        content: "";
-        display: flex;
-    ;
-        border: 1.5em solid #fff;
-    }
-
-    .ribbon:after {
-        border-right-color: transparent;
-    }
-
-    .ribbon:before {
-        border-left-color: transparent;
-    }
-
-    .ribbon a:link,
-    .ribbon a:visited {
-        color: #000;
-        text-decoration: none;
-        height: 3.5em;
-        overflow: hidden;
-    }
-    .ribbon span {
-        background: #fff;
+}
+    .zuo{
+        width: 280px;
+        height: 1000px;
+        border-radius:30px;
+        border:10px solid #d2dcf9;
+         background:url(https://images.cnblogs.com/cnblogs_com/blogs/690905/galleries/2128405/o_220320050654_%E9%A3%8E%E6%99%AF3.jpg);
+           background-size:cover;
         display: inline-block;
-        line-height: 3em;
-        padding: 0 1.5em;
-        margin-top: 0.5em;
-        position: relative;
-        -webkit-transition: background-color 0.2s, margin-top 0.2s;
-        /* Saf3.2+, Chrome */
-        -moz-transition: background-color 0.2s, margin-top 0.2s;
-        /* FF4+ */
-        -ms-transition: background-color 0.2s, margin-top 0.2s;
-        /* IE10 */
-        -o-transition: background-color 0.2s, margin-top 0.2s;
-        /* Opera 10.5+ */
-        transition: background-color 0.2s, margin-top 0.2s;
+         float: left;
+          position: relative;
+    }
+    .you{
+        position:relative
+        width: 1000px;
+        height: 1000px;
+        border-radius:30px;
+        border:10px solid #d2dcf9;
+        background:url(https://images.cnblogs.com/cnblogs_com/blogs/690905/galleries/2128405/o_220320050723_%E6%A0%91%E4%B8%8B.jpg);
+          background-size:cover;
+        display: inline-block;
+        margin-left:10px;
     }
 
-    .ribbon a:hover span {
-        background: #FFD204;
-        margin-top: 0;
-    }
+   .limian{
+           text-align:center;/*文本居中*/
+           position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            margin: auto;
+             width:200px;
+             height:400px;
+             border-radius:15px;
+        border:14px solid #008080;
+          color: #008080;
+          div img{ 'height='180px' width=180px''};
+   }
 
-    .ribbon span:before {
-        content: "";
-        position: absolute;
-        top: 3em;
-        left: 0;
-        border-right: 0.5em solid #9B8651;
-        border-bottom: 0.5em solid #fff;
-    }
+    </style>
+<body>
 
-    .ribbon span:after {
-        content: "";
-        position: absolute;
-        top: 3em;
-        right: 0;
-        border-left: 0.5em solid #9B8651;
-        border-bottom: 0.5em solid #fff;
-    }
-
-</style>
-<div class="home">
-    <div class="content">
-        <div class="stars"></div>
-        <img class="bgc" src="images/2022-03-17-213413.jpg" width="100%" alt="">
-        <h5 class="title">欢迎来到我的个人网站 <br> Welcome to my personal website</h5>
-        <div class='ribbon'>
+<div class="header">
+  <h1>耿牛牛的院子</h1>
+  <p>Welcome to my world!</p>
+  <p>泰兰德的夏天永不停歇，我爱的少年永远热恋</p>
+</div>
+ 
+<div class="navbar">
           <a href="https://www.cnblogs.com/gnn40036/"><span>博客园</span></a>
-           <a href="https://user.qzone.qq.com/3209772686/main"><span>小世界</span></a>
+           <a href="https://www.cnblogs.com/gnn40036/gallery/2128405.html"><span>小世界</span></a>
             <a href="https://msg.cnblogs.com/send/%E6%B8%85%E6%A2%A6%E9%9F%B6%E5%8D%8E"><span>留言板</span></a>
-        </div>
+</div>
+ 
+<div class="zuo">
+    <div class="limian">
+        <a href="https://www.cnblogs.com/gnn40036/"><span>博客园</span></a>
+          <ul1>
+      <li>姓名： 耿晴</li>
+     <li>班级：信2005-1</li>
+     <li>性别：女</li>
+      <li>专业：软件工程</li>
+      <li>学院：信息技术与科学学院</li>
+      
+           </ul>
+          
     </div>
+    
+    </div>
+    <div class="you">
+      
+    
+    
+---
+layout: default
+---
+
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post">
+
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+
+      <div class="entry">
+        {{ post.excerpt }}
+      </div>
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
+</div>
+        
+
+
+    </div>
+
+ 
 
 
 ---
