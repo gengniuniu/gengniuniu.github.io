@@ -189,9 +189,9 @@
 
     <p></p><br>
 
-    <a id="tabs1" class="curtab" href="javascript:showTab('tabs1','tabContent1')">首页</a><br>
+    <a id="tabs1" class="curtab" href="javascript:showTab('tabs1','tabContent1')">博客</a><br>
     <p></p>
-    <a id="tabs2" class="tabs" href="javascript:showTab('tabs2','tabContent2')">博客</a> <br>
+    <a id="tabs2" class="tabs" href="javascript:showTab('tabs2','tabContent2')">个人经历</a> <br>
     <p></p>
     <a id="tabs3" class="tabs" href="javascript:showTab('tabs3','tabContent3')">简历</a><br>
     <p></p>
@@ -199,7 +199,37 @@
   </div>
 
   <div id="tabContent1" style="width:1150px;height:600px;float:right; position:relative;display: block" >
-  
+  <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+            <p class="site-description">{{ site.description }}</p>
+          </div>
+
+          <nav>
+            <a href="{{ site.baseurl }}/">Blog</a>
+            <a href="{{ site.baseurl }}/about">About</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      {{ content }}
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          {% include svg-icons.html %}
+        </footer>
+      </div>
+    </div>
+
+    {% include analytics.html %}
   <div class="stackedit__html"><h3><a id="_0"></a><strong>个人的基本情况</strong></h3>
 <ul>
 <img src = "我的照片.jpg" width="180" height="230" align = "right">
@@ -236,37 +266,37 @@
 
   <div id="tabContent2" style="width:1150px;height:600px;float:right; position:relative;display:  none"  >
    
-     <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
-
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
-
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
-          </nav>
-        </header>
-      </div>
-    </div>
-
-    <div id="main" role="main" class="container">
-      {{ content }}
-    </div>
-
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          {% include svg-icons.html %}
-        </footer>
-      </div>
-    </div>
-
-    {% include analytics.html %}
+       <div class="stackedit__html"><h3><a id="_0"></a><strong>个人的基本情况</strong></h3>
+<ul>
+<img src = "我的照片.jpg" width="180" height="230" align = "right">
+<li>姓名：耿晴</li>
+<li>学校：石家庄铁道大学</li>
+<li>学院：信息科学与技术学院</li>
+<li>爱好： 拼图，读书，摄影   </li>
+<li>我的博客：<a href="https://blog.csdn.net/wei2019_?spm=1011.2124.3001.5343">清梦韶华</a></li>
+</ul>
+  <br>
+<h3><a id="_9"></a><strong>学习情况</strong></h3>
+<p></p>
+<h3><a id="_14"></a><strong>社会实践</strong></h3>
+<ul>
+<li>算法</li>
+<li>运动</li>
+<li>魁地奇球</li>
+</ul>
+<h3><a id="_14"></a><strong>实践情况</strong></h3>
+<ul>
+<li>算法</li>
+<li>运动</li>
+<li>魁地奇球</li>
+</ul>
+<h3><a id="_14"></a><strong>社会实践</strong></h3>
+<ul>
+<li>算法</li>
+<li>运动</li>
+<li>魁地奇球</li>
+</ul>
+</div>
     </div>
   </div>
 
