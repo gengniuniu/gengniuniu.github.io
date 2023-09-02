@@ -1,114 +1,242 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
-    {% include meta.html %}
-
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
-  </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>地铁</title>
   <style type="text/css">
-    
-    * {
-    box-sizing: border-box;
-}
- 
-/* body 样式 */
-body {
-    font-family: Arial;
-    margin: 0;
-}
-
-/* 导航 */
-.navbar {
-    overflow: hidden;
-    background-color: #F18DD4;
-}
- 
-/* 导航栏样式 */
-.navbar a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-
-}
-    .zuo{
-        width: 280px;
-        height: 1000px;
-        border:none;
-        background-color:black;
-         background-size:cover;
-        display: inline-block;
-         float: left;
-          position: relative;
-    }
-    .you{
-        position:relative
-        width: 1000px;
-        height: 1000px;
-        border:none;
-       background-color:black;
-        background-size:cover;
-        display: inline-block;
-        margin-left:10px;
+    /*设置超链接样式*/
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
     }
 
-   .limian{
-           text-align:center;/*文本居中*/
-           position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            margin: auto;
-             width:200px;
-             height:400px;
-             border-radius:15px;
-        border:14px solid #008080;
-          color: #008080;
-          div img{ 'height='180px' width=180px''};
-   }
+    a {
+      color: black;
+      text-decoration:none;
+      font-size:18px;/*设置字体大小*/
+      font-weight:5px;/*调整字体粗细*/
 
-    </style>
+    }
 
-  <body>
-    
+    a:hover {
+      color:#566e0c;
 
+      font-size: 18px;
+    }
+
+    a:visited {
+      color: #566e0c;
+      font-size: 12px;
+    }
+    /*整个tab层居中，宽度为600px*/
+    #tabDiv {
+      width: 600px;
+      margin: 1em auto;
+      padding-bottom: 10px;
+      border-right: #ffffff 1px solid;
+      border-top: #ffffff 1px solid;
+      border-left: #ffffff 1px solid;
+      border-bottom: #ffffff 1px solid;
+      background-color:#fffef9 ;
+
+    }
+    /*tab头的样式*/
+    #tabsHead {
+
+      height: 226px;
+      background-color:#f1fbd2 ;
+
+
+    }
+    /*已选tab头（超链接）的样式*/
+    .curtab {
+      padding-top: 0px;
+      padding-right: 10px;
+      padding-bottom: 0px;
+      padding-left: 10px;
+      border-right: #f2595f 1px solid;
+      font-weight: bold;
+      float: left;
+      cursor: pointer;
+
+    }
+    /*未选tab头（超链接）的样式*/
+    .tabs {
+      border-right: #f2595f 1px solid;
+      padding-top: 0px;
+      padding-right: 10px;
+      padding-bottom: 0px;
+      padding-left: 10px;
+      font-weight: normal;
+      float: left;
+      cursor: pointer;
+    }
+
+    li {
+
+      font-size: 18px;
+      font-weight: 666;
+      color:#494949;
+
+    }
+    .title {
+      float: right;
+
+      font-size: 24px;
+      font-weight: 500;
+      color:#ffffff;
+    }
+
+    .ziti {
+
+      font-size: 18px;
+      font-weight: 666;
+      color:#494949;
+    }
+    .ziti2 {
+
+      font-size: 23px;
+      font-weight: 666;
+      color:#494949;
+    }
+    .ziti3 {
+
+      font-size: 18px;
+      font-weight: 666;
+      color:#000000;
+    }
+   
+    .select{
+      background:#fafdfe;
+      height:31px;
+      width:200px;
+      line-height:28px;
+      border:1px solid #f1fbd2;
+      -moz-border-radius:2px;
+      -webkit-border-radius:2px;
+      border-radius:2px;
+    }
+    .div_foot {
+      position: absolute;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      width: 100%;
+       font-size: 17px;
+       font-weight:bold;
+    }
+    #d1{
+        width: 100px;
+        height: 100px;
+        border: 1px solid blue;
+        border-radius: 100%;
+        overflow: hidden;
+      }
+      img {
+        max-height: 100%;
+      }
+  </style>
+
+  <script type="text/jscript">
+        //显示tab（tabHeadId：tab头中当前的超链接；tabContentId要显示的层ID）
+        function showTab(tabHeadId,tabContentId)
+        {
+            //tab层
+            var tabDiv = document.getElementById("tabDiv");
+            //将tab层中所有的内容层设为不可见
+            //遍历tab层下的所有子节点
+            var taContents = tabDiv.childNodes;
+            for(i=0; i<taContents.length; i++)
+            {
+                //将所有内容层都设为不可见
+                if(taContents[i].id!=null && taContents[i].id != 'tabsHead')
+                {
+                    taContents[i].style.display = 'none';
+                }
+            }
+            //将要显示的层设为可见
+            document.getElementById(tabContentId).style.display = 'block';
+            //遍历tab头中所有的超链接
+            var tabHeads = document.getElementById('tabsHead').getElementsByTagName('a');
+            for(i=0; i<tabHeads.length; i++)
+            {
+                //将超链接的样式设为未选的tab头样式
+                tabHeads[i].className='tabs';
+            }
+            //将当前超链接的样式设为已选tab头样式
+            document.getElementById(tabHeadId).className='curtab';
+            document.getElementById(tabHeadId).blur();
+        }
+</script>
+
+
+
+
+
+</head>
 <body>
- 
-<div class="navbar">
-           <a href="https://www.cnblogs.com/gnn40036/"><span>博客园</span></a>
-           <a href="https://www.cnblogs.com/gnn40036/gallery/2128405.html"><span>小世界</span></a>
-            <a href="https://msg.cnblogs.com/send/%E6%B8%85%E6%A2%A6%E9%9F%B6%E5%8D%8E"><span>留言板</span></a>
-</div>
- 
-<div class="zuo">
-    <div class="limian">
-        <a href="https://www.cnblogs.com/gnn40036/"><span>博客园</span></a>
-          <ul1>
-      <li>姓名： 耿晴</li>
-     <li>班级：信2005-1</li>
-     <li>性别：女</li>
-      <li>专业：软件工程</li>
-      <li>学院：信息技术与科学学院</li>
-      
-           </ul>
-          
-    </div>
-    
-    </div>
-    <div class="you">
 
-    <div class="wrapper-masthead">
+
+<div id="tabDiv" style="padding:30px;width:90%;height:600px;margin: auto; ">
+
+  <div id="tabsHead" style="border:10px solid #f1fbd2;float:left;width:12%;height:1000px;text-align:center;  ">
+    <h1></h1>
+    <div id="d1">
+    <img src="http://gss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/48540923dd54564e2d86086eb8de9c82d0584f82.jpg" alt="">
+  </div>
+    <div style="width:90px;height:90px; margin: auto;text-align:center">
+    </div>
+
+    <p></p><br>
+
+    <a id="tabs1" class="curtab" href="javascript:showTab('tabs1','tabContent1')">首页</a><br>
+    <p></p>
+    <a id="tabs2" class="tabs" href="javascript:showTab('tabs2','tabContent2')">博客</a> <br>
+    <p></p>
+    <a id="tabs3" class="tabs" href="javascript:showTab('tabs3','tabContent3')">简历</a><br>
+    <p></p>
+
+  </div>
+
+  <div id="tabContent1" style="width:1150px;height:600px;float:right; position:relative;display: block" >
+  
+  <div class="stackedit__html"><h3><a id="_0"></a><strong>个人的基本情况</strong></h3>
+<ul>
+<img src = "我的照片.jpg" width="180" height="230" align = "right">
+<li>姓名：耿晴</li>
+<li>学校：石家庄铁道大学</li>
+<li>学院：信息科学与技术学院</li>
+<li>爱好： 拼图，读书，摄影   </li>
+<li>我的博客：<a href="https://blog.csdn.net/wei2019_?spm=1011.2124.3001.5343">清梦韶华</a></li>
+</ul>
+  <br>
+<h3><a id="_9"></a><strong>学习情况</strong></h3>
+<p></p>
+<h3><a id="_14"></a><strong>社会实践</strong></h3>
+<ul>
+<li>算法</li>
+<li>运动</li>
+<li>魁地奇球</li>
+</ul>
+<h3><a id="_14"></a><strong>实践情况</strong></h3>
+<ul>
+<li>算法</li>
+<li>运动</li>
+<li>魁地奇球</li>
+</ul>
+<h3><a id="_14"></a><strong>社会实践</strong></h3>
+<ul>
+<li>算法</li>
+<li>运动</li>
+<li>魁地奇球</li>
+</ul>
+</div>
+
+  </div>
+
+  <div id="tabContent2" style="width:1150px;height:600px;float:right; position:relative;display:  none"  >
+   
+     <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
           <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
@@ -140,5 +268,29 @@ body {
 
     {% include analytics.html %}
     </div>
-  </body>
+  </div>
+
+
+  <!--以下为获奖记录部分内容-->
+  <div id="tabContent3" style="width:1150px;height:600px;float:right; position:relative;display:  none"  >
+    <p> &nbsp;</p>
+
+
+    <p>&nbsp;</p>
+   
+      第三页
+    </div>
+
+  </div>
+
+
+  
+    <div class="div_foot"style="position:fixed; bottom:0px; width:100%; text-align:center;   font-size: 17px;">
+      &copy; 制作人：  石家庄铁道大学-信息科学与技术学院-软件工程系-耿晴
+    </div>
+
+  </div>
+
+
+</body>
 </html>
