@@ -3,8 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-
-Some information about you!
+欢迎来到我的主页，希望你渡过美好的一天！
 
 ### More Information
 
